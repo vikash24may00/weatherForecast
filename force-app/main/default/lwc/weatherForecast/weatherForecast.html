@@ -1,0 +1,128 @@
+<!--
+  @description       : 
+  @author            : VIKASH MUNDARI
+  @group             : 
+  @last modified on  : 06-19-2024
+  @last modified by  : VIKASH MUNDARI
+-->
+
+<!-- 
+<template>
+    <lightning-card title="Weather App">
+        <div class="slds-m-around_small">
+            <lightning-input label="Enter City Name" value={cityName} onchange={handleCityChange}></lightning-input>
+            <lightning-button class="slds-m-top_small" label="Get Weather" onclick={getWeather}></lightning-button>
+            
+            <template if:true={weatherData}>
+                <div class="slds-m-top_small card-container">
+                    <div class="card compact-card bg-dark text-white">
+                        <div class="bg-image">
+                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-weather/draw1.webp"
+                                class="card-img" alt="weather" />
+                            <div class="mask"></div>
+                        </div>
+                        <div class="card-details">
+                            <div class="card-content">
+                                <h4 class="mb-0">{weatherData.location.name}</h4>
+                                <p class="display-4 my-2">{weatherData.current.temp_c}°C</p>
+                                <p>{weatherData.current.condition.text}</p>
+                                <p>Humidity: {weatherData.current.humidity}%</p>
+                                <p>Wind: {weatherData.current.wind_kph} kph</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-m-top_small">
+                    <p class="slds-text-color_error">Error: {error}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template>  -->
+<!-- 
+<template>
+    <lightning-card title="Weather App">
+        <div class="slds-m-around_small">
+            <lightning-input label="Enter City Name" value={cityName} onchange={handleCityChange}></lightning-input>
+            <lightning-button class="slds-m-top_small" label="Get Weather" onclick={getWeather}></lightning-button>
+            
+            <template if:true={weatherData}>
+                <div class="slds-m-top_small card-container">
+                    <div class="weather-widget">
+                        <div class="header">
+                            <div class="location">{weatherData.location.name}</div>
+                        </div>
+                        <div class="main">
+                            <div class="temperature">{weatherData.current.temp_c}°C</div>
+                            <div class="condition">{weatherData.current.condition.text}</div>
+                        </div>
+                        <div class="footer">
+                            <div class="detail">
+                                <span class="icon">🌬️</span>
+                                <span class="value">{weatherData.current.wind_kph} km/h</span>
+                            </div>
+                            <div class="detail">
+                                <span class="icon">💧</span>
+                                <span class="value">{weatherData.current.humidity}%</span>
+                            </div>
+                        </div>
+                        <div class="icon-weather">
+                            <img src={weatherIconUrl} alt="Weather icon">
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-m-top_small">
+                    <p class="slds-text-color_error">Error: {error}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card>
+</template> -->
+
+<template>
+    <lightning-card title="Weather App" class="weather-card">
+        <div class="slds-m-around_small">
+            <lightning-input label="Enter City Name" value={cityName} onchange={handleCityChange}></lightning-input>
+            <lightning-button class="slds-m-top_small" label="Get Weather" onclick={getWeather}></lightning-button>
+            
+            <template if:true={weatherData}>
+                <div class="slds-m-top_small  card-container">
+                    <div class="weather-widget">
+                        <div class="header">
+                            <div class="location">{weatherData.location.name}</div>
+                        </div>
+                        <div class="main">
+                            <div class="temperature">{weatherData.current.temp_c}°C</div>
+                            <div class="condition">{weatherData.current.condition.text}</div>
+                        </div>
+                        <div class="footer">
+                            <div class= "detail">
+                                <span class="icon">🌬️</span>
+                                <span class="value">{weatherData.current.wind_kph} km/h</span>
+                            </div>
+                            <div class="detail">
+                                <span class="icon">💧</span>
+                                <span class="value">{weatherData.current.humidity}%</span>
+                            </div>
+                        </div>
+                        <div class="icon-weather">
+                            <img src={weatherData.current.condition.icon} alt="Weather icon">
+                        </div>
+                    </div>
+                </div>
+            </template>
+
+            <template if:true={error}>
+                <div class="slds-m-top_small">
+                    <p class="slds-text-color_error">Error: {error}</p>
+                </div>
+            </template>
+        </div>
+    </lightning-card> 
+</template>
